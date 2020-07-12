@@ -6,8 +6,7 @@ export const environment = {
   production: false,
   getAllCountries: baseurl + 'all',
   getCountriesByRegion: baseurl + 'region/{region}',
-  getCountryByCode: baseurl + 'alpha/{code}',
-  getCountryByName: baseurl + 'name/{name}'
+  getCountryByCode: baseurl + 'alpha/{code}'
 };
 
 /*
