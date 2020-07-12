@@ -1,0 +1,33 @@
+<div class="search_row">
+    <div class="input_wrapper">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" placeholder="Search for a country" class="search_input" [(ngModel)]="searchText">
+
+    </div>
+    <div class="dropdown">
+        <button (click)="showRegions()" class="dropbtn">{{selectedRegion}}
+            <i *ngIf="!dropdownClicked" class="fa fa-caret-down arrow_icon"></i>
+            <i *ngIf="dropdownClicked" class="fa fa-caret-up arrow_icon"></i>
+        </button>
+        <div id="regionDropdown" class="dropdown-content" *ngIf="dropdownClicked">
+            <div (click)="selectRegion('All')" class="option">All</div>
+            <div (click)="selectRegion('Africa')" class="option">Africa</div>
+            <div (click)="selectRegion('Americas')" class="option">Americas</div>
+            <div (click)="selectRegion('Asia')" class="option">Asia</div>
+            <div (click)="selectRegion('Europe')" class="option">Europe</div>
+            <div (click)="selectRegion('Oceania')" class="option">Oceania</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div *ngFor="let country of countries| filter: {name: searchText, null:searchText};" class="card" (click)="goToDetails(country.alpha3Code)">
+        <img [src]="country.flag" alt="country flag" class="flag">
+        <div class="country_info">
+            <h3>{{country.name}}</h3>
+            <p> <span class="info_label">Population:</span> {{country.population}}</p>
+            <p><span class="info_label">Region:</span> {{country.region}}</p>
+            <p><span class="info_label">Capital:</span> {{country.capital}}</p>
+        </div>
+    </div>
+</div>

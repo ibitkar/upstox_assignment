@@ -1,0 +1,41 @@
+<div class="back_row">
+    <button (click)="backToPage()" class="back_btn"><i *ngIf="!dropdownClicked" class="fa fa-arrow-left back_arrow"></i>
+        Back</button>
+</div>
+<div class="container">
+    <div class="col-1">
+        <img [src]="countryData.flag" alt="country flag" class="flag2">
+    </div>
+    <div class="col-2">
+        <h2>{{countryData.name}}</h2>
+        <div class="subrow">
+            <div class="subcol">
+                <p> <span class="info_label">Native Name:</span> {{countryData.nativeName}}</p>
+                <p> <span class="info_label">Population:</span> {{countryData.population}}</p>
+                <p><span class="info_label">Region:</span> {{countryData.region}}</p>
+                <p><span class="info_label">Sub Region:</span> {{countryData.subregion}}</p>
+                <p><span class="info_label">Capital:</span> {{countryData.capital}}</p>
+
+            </div>
+            <div class="subcol">
+                <p><span class="info_label">Top Level Domains:</span> <span
+                        *ngFor="let domain of countryData.topLevelDomain; index as i">{{domain}}<span
+                            *ngIf="((countryData.currencies.length>0) &&(i <(countryData.currencies.length-1) ))">,</span></span>
+                </p>
+                <p><span class="info_label">Currencies:</span> <span
+                        *ngFor="let currency of countryData.currencies; index as i">{{currency.name}}<span
+                            *ngIf="((countryData.currencies.length>0) &&(i <(countryData.currencies.length-1) ))">,</span></span>
+                </p>
+                <p><span class="info_label">Languages:</span> <span
+                        *ngFor="let language of countryData.languages; index as i">{{language.name}} <span
+                            *ngIf="((countryData.languages.length>0) &&(i <(countryData.languages.length-1) ))">,</span></span>
+                </p>
+            </div>
+            <p><span class="info_label">Border Countries:</span> <button (click)="goToBorderCountry(borderCountry.code)"
+                    class="border_btn" *ngFor="let borderCountry of borderCountries">{{borderCountry.name}}</button></p>
+
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,92 @@
+.container {
+    padding: 10px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+:host .card {
+    background-color: var(--foreground);
+    box-shadow: var(--box-shadow);
+    width: 29%;
+    margin: 2%;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.flag {
+    width: 100%;
+    height: 200px;
+}
+
+.country_info {
+    padding: 0 0 7px 20px;
+    font-size: 14px;
+
+}
+
+.search_input {
+    border: none;
+    height: 85%;
+    width: 90%;
+    background-color: var(--foreground);
+    color: var(--color);
+}
+
+.fa-search {
+    padding: 11px 20px;
+}
+
+.input_wrapper {
+    width: 39%;
+    height: 40px;
+    display: flex;
+    background-color: var(--foreground);
+    color: var(--color);
+    box-shadow: var(--box-shadow2);
+}
+
+.search_row {
+    margin: 2% 1% 0 4%;
+    display: flex;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 1% 0 45%;
+
+    .dropbtn {
+        background-color: var(--foreground);
+        color: var(--color);
+        box-shadow: var(--box-shadow2);
+        padding: 15px;
+        border: none;
+        cursor: pointer;
+        width: 150px;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        margin-top: 3%;
+        min-width: 148px;
+        overflow: auto;
+        background-color: var(--foreground);
+        color: var(--color);
+        box-shadow: var(--box-shadow2);
+        z-index: 1;
+      }
+
+      .option {
+        color: var(--color);
+        padding: 5px 16px;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+      }
+}
+
+.arrow_icon {
+    padding: 0 0 0 10px;
+}
